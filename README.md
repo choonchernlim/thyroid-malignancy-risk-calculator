@@ -1,1 +1,1 @@
-# thyroid-malignancy-risk-calculator
+# Thyroid Malignancy Risk Calculator
