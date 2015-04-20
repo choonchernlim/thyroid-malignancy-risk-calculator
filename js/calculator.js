@@ -60,8 +60,19 @@ var FNA_RESULT = {
 };
 
 var calculator = {
-    compute : function ( riskPercentage, fnaResult ) {
-        var preTestOdds = riskPercentage / (1 - riskPercentage);
+    computeAll : function ( percent ) {
+        return {
+            nonDiagnostic                   : calculator.compute( percent, FNA_RESULT.nonDiagnostic ),
+            benign                          : calculator.compute( percent, FNA_RESULT.benign ),
+            aus                             : calculator.compute( percent, FNA_RESULT.aus ),
+            suspiciousForFollicularNeoplasm : calculator.compute( percent, FNA_RESULT.suspiciousForFollicularNeoplasm ),
+            suspiciousForMalignancy         : calculator.compute( percent, FNA_RESULT.suspiciousForMalignancy ),
+            malignant                       : calculator.compute( percent, FNA_RESULT.malignant )
+        };
+    },
+
+    compute : function ( percent, fnaResult ) {
+        var preTestOdds = percent / (1 - percent);
         var postTestOddsEstimate = preTestOdds * fnaResult.estimate;
         var postTestProbabilityEstimate = postTestOddsEstimate / (1 + postTestOddsEstimate) * 100;
         var postTestOddsLower = preTestOdds * fnaResult.lower97ci;

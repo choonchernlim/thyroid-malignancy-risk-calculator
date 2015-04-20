@@ -67,15 +67,7 @@
 <script type="text/javascript" src="js/calculator.js"></script>
 
 <script>
-    var riskPercentage = 0.05;
-    console.log( JSON.stringify( calculator.compute( riskPercentage, FNA_RESULT.nonDiagnostic ), null, 4 ) );
-    console.log( JSON.stringify( calculator.compute( riskPercentage, FNA_RESULT.benign ), null, 4 ) );
-    console.log( JSON.stringify( calculator.compute( riskPercentage, FNA_RESULT.aus ), null, 4 ) );
-    console.log( JSON.stringify( calculator.compute( riskPercentage, FNA_RESULT.suspiciousForFollicularNeoplasm ),
-            null,
-            4 ) );
-    console.log( JSON.stringify( calculator.compute( riskPercentage, FNA_RESULT.suspiciousForMalignancy ), null, 4 ) );
-    console.log( JSON.stringify( calculator.compute( riskPercentage, FNA_RESULT.malignant ), null, 4 ) );
+    console.log( JSON.stringify( calculator.computeAll( 0.05 ), null, 4 ) );
 
     var highlightCSS = 'alert-info';
     var $resultValue = $( '.resultValue' );
