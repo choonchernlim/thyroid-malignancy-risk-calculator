@@ -8,14 +8,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+
+    <link rel="stylesheet" href="vendor/materialize/0.96.1/css/materialize.min.css">
 
     <style>
         #content {
-            height: 80vh;
+            height: 70vh;
         }
     </style>
-
 </head>
 <body>
 
@@ -34,115 +35,135 @@
     <div class="row valign-wrapper">
 
         <div class="col s2 center-align">
-            <a class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
+            <a id="prevBtn" class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
                     class="mdi-navigation-arrow-back"></i></a>
         </div>
 
 
         <div id="content" class="col s8">
+            <br/>
+
+            <div class="row center-align">
+                <div class="col s2 offset-s3">
+                    <i class="user-progress user-progress-1 mdi-image-lens grey-text text-lighten-1"></i>
+                </div>
+                <div class="col s2">
+                    <i class="user-progress user-progress-2 mdi-image-lens grey-text text-lighten-1"></i>
+                </div>
+                <div class="col s2">
+                    <i class="user-progress user-progress-3 mdi-image-lens grey-text text-lighten-1"></i>
+                </div>
+            </div>
+
             <!--
             ###################
             Step 1
             ###################
             -->
-            <div id="step1" class="hide">
-                <h5 class="light">Enter probability of this nodule's thyroid malignancy :</h5>
+            <div class="user-screen user-screen-1 hide">
+                <form id="form">
+                    <div class="card-panel">
+                        <h5 class="light">Enter probability of this nodule's thyroid malignancy :</h5>
 
-                <div class="row">
-                    <div class="input-field col s1 offset-s2">
-                        <input id="icon_prefix" type="text" class="validate">
+                        <div class="row">
+                            <div class="input-field col s1 offset-s2">
+                                <input id="user-risk-text" type="text">
+                            </div>
+                            <div class="input-field col s8">
+                                <label>%
+                                    <small>( Value between 1 to 100 )</small>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field col s8">
-                        <label>%
-                            <small>( Value between 1 to 100 )</small>
-                        </label>
+
+                    <h5 class="center-align">- OR -</h5>
+
+                    <div class="card-panel">
+                        <h5 class="light">Select an ATA US risk classification :</h5>
+
+                        <ul class="collection">
+                            <li class="collection-item">
+                                <input id="risk1" type="radio" name="user-risk-radio" value="0.8" class="with-gap"/>
+                                <label for="risk1">
+                                    <strong>High suspicion (>70-90%)</strong> :
+                                    Solid hypoechoic nodule or solid hypoechoic component (if partially cystic) with
+                                    1 or more features: irregular margins (infiltrative, microlobulated),
+                                    microcalcifications, taller than wide shape, rim calcifications (small extrusive
+                                    soft tissue component), extrathyroidal extension.
+                                </label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="risk2" type="radio" name="user-risk-radio" value="0.15" class="with-gap"/>
+                                <label for="risk2">
+                                    <strong>Intermediate suspicion (10-20%)</strong> :
+                                    Hypoechoic solid nodule with smooth margins without microcalcifications,
+                                    extrathyroidal extension, or taller than wide shape.
+                                </label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="risk3" type="radio" name="user-risk-radio" value="0.075" class="with-gap"/>
+                                <label for="risk3">
+                                    <strong>Low suspicion (5-10%)</strong> :
+                                    Isoechoic or hyperechoic solid nodule, or partially cystic nodule with eccentric
+                                    solid areas, without microcalcification, irregular margin or extrathyroidal
+                                    extension, or taller than wide shape.
+                                </label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="risk4" type="radio" name="user-risk-radio" value="0.03" class="with-gap"/>
+                                <label for="risk4">
+                                    <strong>Very low suspicion (<3%)</strong> :
+                                    Spongiform or partially cystic nodules without any of the sonographic features
+                                    described in low, intermediate or high suspicion patterns.
+                                </label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="risk5" type="radio" name="user-risk-radio" value="0.01" class="with-gap"/>
+                                <label for="risk5">
+                                    <strong>Benign (<1%)</strong> :
+                                    Purely cystic nodules (no solid component).
+                                </label>
+                            </li>
+                        </ul>
                     </div>
+                </form>
+            </div>
+
+            <!--
+            ###################
+            Step 2
+            ###################
+            -->
+            <div class="user-screen user-screen-2 hide">
+                <div class="card-panel">
+                    <h5 class="light">Please enter US-FNA result :</h5>
+
+                    <ul>
+                        <li>Non diagnostic</li>
+                        <li>Benign</li>
+                        <li>AUS</li>
+                        <li>Suspicious for Follicular Neoplasm</li>
+                        <li>Suspicious for Malignancy</li>
+                        <li>Malignant</li>
+                    </ul>
                 </div>
-
-                <h5 class="center-align">- OR -</h5>
-                <br/>
-
-                <h5 class="light">Select an ATA US risk classification :</h5>
-
-                <ul class="collection">
-                    <li class="collection-item">
-                        <input id="risk1" type="radio" name="risk" value="0.8" class="with-gap"/>
-                        <label for="risk1">
-                            <strong>High suspicion (>70-90%)</strong> :
-                            Solid hypoechoic nodule or solid hypoechoic component (if partially cystic) with 1 or more
-                            features: irregular margins (infiltrative, microlobulated), microcalcifications, taller than
-                            wide shape, rim calcifications (small extrusive soft tissue component), extrathyroidal
-                            extension.
-                        </label>
-                    </li>
-                    <li class="collection-item">
-                        <input id="risk2" type="radio" name="risk" value="0.15" class="with-gap"/>
-                        <label for="risk2">
-                            <strong>Intermediate suspicion (10-20%)</strong> :
-                            Hypoechoic solid nodule with smooth margins without microcalcifications,
-                            extrathyroidal extension, or taller than wide shape.
-                        </label>
-                    </li>
-                    <li class="collection-item">
-                        <input id="risk3" type="radio" name="risk" value="0.075" class="with-gap"/>
-                        <label for="risk3">
-                            <strong>Low suspicion (5-10%)</strong> :
-                            Isoechoic or hyperechoic solid nodule, or partially cystic nodule with eccentric solid
-                            areas, without microcalcification, irregular margin or extrathyroidal extension, or taller
-                            than wide shape.
-                        </label>
-                    </li>
-                    <li class="collection-item">
-                        <input id="risk4" type="radio" name="risk" value="0.03" class="with-gap"/>
-                        <label for="risk4">
-                            <strong>Very low suspicion (<3%)</strong> :
-                            Spongiform or partially cystic nodules without any of the sonographic features
-                            described in low, intermediate or high suspicion patterns.
-                        </label>
-                    </li>
-                    <li class="collection-item">
-                        <input id="risk5" type="radio" name="risk" value="0.01" class="with-gap"/>
-                        <label for="risk5">
-                            <strong>Benign (<1%)</strong> :
-                            Purely cystic nodules (no solid component).
-                        </label>
-                    </li>
-                </ul>
             </div>
 
             <!--
             ###################
-            Step 2
+            Step 3
             ###################
             -->
-            <div id="step2" class="hide">
-                <h5 class="light">Please enter US-FNA result :</h5>
-
-                <ul>
-                    <li> Non diagnostic</li>
-                    <li> Benign</li>
-                    <li> AUS</li>
-                    <li> Suspicious for Follicular Neoplasm</li>
-                    <li> Suspicious for Malignancy</li>
-                    <li> Malignant</li>
-                </ul>
-            </div>
-
-            <!--
-            ###################
-            Step 2
-            ###################
-            -->
-            <div id="step3">
+            <div class="user-screen user-screen-3 hide">
                 <h4>Risk of Malignancy</h4>
 
                 <p class="light">In 100 nodules with this features and FNA result</p>
 
                 <div class="center-align">
-                    <div id="diagram">
-                    </div>
+                    <div id="computed-diagram"></div>
 
-                    <h5 class="light">67 % ( 40 – 70 )</h5>
+                    <h5 id="computed-value" class="light"></h5>
                 </div>
 
 
@@ -153,7 +174,7 @@
 
 
         <div class="col s2 center-align">
-            <a class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
+            <a id="nextBtn" class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
                     class="mdi-navigation-arrow-forward"></i></a>
         </div>
 
@@ -161,99 +182,10 @@
 </div>
 
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-
-<script type="text/javascript" src="js/calculator.js"></script>
-
-<script>
-    $( function () {
-        var estimate = 67;
-        var $diagram = $( '#diagram' );
-
-        $diagram.empty();
-
-        var currentCount = 0;
-        var color = '';
-
-        for ( var row = 0; row < 10; ++row ) {
-            var $row = $( '<div class="row">' );
-
-            $row.append( '<div class="col s1">&nbsp;</div>' );
-
-            for ( var col = 0; col < 10; ++col ) {
-                color = currentCount++ < estimate ? "teal" : "orange";
-                $row.append( '<div class="col s1"><i class="btn-floating disabled ' + color + '"></i></div>' );
-            }
-
-            $row.append( '<div class="col s1">&nbsp;</div>' );
-
-            $diagram.append( $row );
-        }
-
-    } );
-</script>
-
-<!--<script>-->
-<!--console.log( JSON.stringify( calculator.computeAll( 0.05 ), null, 4 ) );-->
-
-<!--var highlightCSS = 'alert-info';-->
-<!--var $resultValue = $( '.resultValue' );-->
-<!--var resultValues = _.map( $resultValue.toArray(), function ( selectorName ) {-->
-<!--return $( selectorName ).text();-->
-<!--} );-->
-<!--var $prevButton = $( '.prevResultValueBtn' );-->
-<!--var $nextButton = $( '.nextResultValueBtn' );-->
-
-<!--var app = {-->
-<!--removeSelectedResultValue : function ( index ) {-->
-<!--$( '.resultValue:contains("' + resultValues[index] + '")' ).removeClass( highlightCSS );-->
-<!--},-->
-
-<!--setSelectedResultValue : function ( index ) {-->
-<!--$( '.resultValue:contains("' + resultValues[index] + '")' ).addClass( highlightCSS );-->
-<!--},-->
-
-<!--setButtonState : function ( $button, isDisabled ) {-->
-<!--$button.prop( 'disabled', isDisabled );-->
-<!--}-->
-<!--};-->
-
-<!--app.setSelectedResultValue( 2 );-->
-
-<!--console.log( resultValues );-->
-
-<!--$prevButton.click( function () {-->
-<!--var value = $( '.' + highlightCSS ).text();-->
-<!--var index = _.indexOf( resultValues, value );-->
-
-<!--if ( index > 0 ) {-->
-<!--app.setButtonState( $nextButton, false );-->
-<!--app.removeSelectedResultValue( index );-->
-<!--app.setSelectedResultValue( index - 1 );-->
-<!--}-->
-<!--else {-->
-<!--app.setButtonState( $prevButton, true );-->
-<!--}-->
-<!--} );-->
-
-<!--$nextButton.click( function () {-->
-<!--var value = $( '.' + highlightCSS ).text();-->
-<!--var index = _.indexOf( resultValues, value );-->
-
-<!--if ( index < $resultValue.length - 1 ) {-->
-<!--app.setButtonState( $prevButton, false );-->
-<!--app.removeSelectedResultValue( index );-->
-<!--app.setSelectedResultValue( index + 1 );-->
-<!--}-->
-<!--else {-->
-<!--app.setButtonState( $nextButton, true );-->
-<!--}-->
-<!--} );-->
-
-<!--</script>-->
+<script type="text/javascript" src="vendor/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="vendor/underscore/1.8.3/underscore.min.js"></script>
+<script type="text/javascript" src="vendor/materialize/0.96.1/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
 </body>
 </html>
