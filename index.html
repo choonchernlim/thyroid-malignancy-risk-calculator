@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 <head>
-    <!-- TODO title -->
-    <title>Test</title>
+    <title>Thyroid Malignancy Risk Calculator</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,75 +12,151 @@
 
     <style>
         #content {
-            height: 100vh;
+            height: 80vh;
         }
     </style>
 
 </head>
 <body>
 
+<nav class="blue-grey lighten-1">
+    <div class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">Thyroid Malignancy Risk Calculator</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </div>
+</nav>
+
 <div class="container">
 
     <div class="row valign-wrapper">
+
         <div class="col s2 center-align">
-            <a class="waves-effect waves-light btn btn-large btn-floating"><i class="mdi-navigation-arrow-back"></i></a>
+            <a class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
+                    class="mdi-navigation-arrow-back"></i></a>
         </div>
+
+
         <div id="content" class="col s8">
-            <h4>Thyroid Malignancy Risk Calculator</h4>
+            <!--
+            ###################
+            Step 1
+            ###################
+            -->
+            <div id="step1" class="hide">
+                <h5 class="light">Enter probability of this nodule's thyroid malignancy :</h5>
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec blandit orci. Aenean lobortis feugiat
-                laoreet. Nulla dapibus facilisis facilisis. Cras consectetur et odio sed consequat. Praesent nec
-                eleifend orci, non rutrum justo. Donec non nulla in urna volutpat semper. Pellentesque imperdiet id ex
-                ac facilisis.
-            </p>
+                <div class="row">
+                    <div class="input-field col s1 offset-s2">
+                        <input id="icon_prefix" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s8">
+                        <label>%
+                            <small>( Value between 1 to 100 )</small>
+                        </label>
+                    </div>
+                </div>
 
-            <table class="bordered">
-                <thead>
-                <tr>
-                    <th colspan="2">Sonographic Pattern and US Feature</th>
-                </tr>
-                </thead>
+                <h5 class="center-align">- OR -</h5>
+                <br/>
 
-                <tbody>
-                <tr>
-                    <td><strong>High suspicion (>70-90%)</strong>
-                        <br/>
-                        Solid hypoechoic nodule or solid hypoechoic component of a partially cystic nodule with one or
-                        more of the following features: irregular margins (infiltrative, microlobulated),
-                        microcalcifications, taller than wide shape, rim calcifications with small extrusive soft tissue
-                        component, evidence of extrathyroidal extension
-                    </td>
-                    <td>
-                        <i class="small mdi-toggle-radio-button-off"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Solid hypoechoic nodule or solid hypoechoic component of a partially cystic nodule with one or
-                        more of the following features: irregular margins (infiltrative, microlobulated),
-                        microcalcifications, taller than wide shape, rim calcifications with small extrusive soft tissue
-                        component, evidence of extrathyroidal extension
-                    </td>
-                    <td>
-                        <i class="small mdi-toggle-radio-button-off"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Solid hypoechoic nodule or solid hypoechoic component of a partially cystic nodule with one or
-                        more of the following features: irregular margins (infiltrative, microlobulated),
-                        microcalcifications, taller than wide shape, rim calcifications with small extrusive soft tissue
-                        component, evidence of extrathyroidal extension
-                    </td>
-                    <td>
-                        <i class="small mdi-toggle-radio-button-off"></i>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                <h5 class="light">Select an ATA US risk classification :</h5>
+
+                <ul class="collection">
+                    <li class="collection-item">
+                        <input id="risk1" type="radio" name="risk" value="0.8" class="with-gap"/>
+                        <label for="risk1">
+                            <strong>High suspicion (>70-90%)</strong> :
+                            Solid hypoechoic nodule or solid hypoechoic component (if partially cystic) with 1 or more
+                            features: irregular margins (infiltrative, microlobulated), microcalcifications, taller than
+                            wide shape, rim calcifications (small extrusive soft tissue component), extrathyroidal
+                            extension.
+                        </label>
+                    </li>
+                    <li class="collection-item">
+                        <input id="risk2" type="radio" name="risk" value="0.15" class="with-gap"/>
+                        <label for="risk2">
+                            <strong>Intermediate suspicion (10-20%)</strong> :
+                            Hypoechoic solid nodule with smooth margins without microcalcifications,
+                            extrathyroidal extension, or taller than wide shape.
+                        </label>
+                    </li>
+                    <li class="collection-item">
+                        <input id="risk3" type="radio" name="risk" value="0.075" class="with-gap"/>
+                        <label for="risk3">
+                            <strong>Low suspicion (5-10%)</strong> :
+                            Isoechoic or hyperechoic solid nodule, or partially cystic nodule with eccentric solid
+                            areas, without microcalcification, irregular margin or extrathyroidal extension, or taller
+                            than wide shape.
+                        </label>
+                    </li>
+                    <li class="collection-item">
+                        <input id="risk4" type="radio" name="risk" value="0.03" class="with-gap"/>
+                        <label for="risk4">
+                            <strong>Very low suspicion (<3%)</strong> :
+                            Spongiform or partially cystic nodules without any of the sonographic features
+                            described in low, intermediate or high suspicion patterns.
+                        </label>
+                    </li>
+                    <li class="collection-item">
+                        <input id="risk5" type="radio" name="risk" value="0.01" class="with-gap"/>
+                        <label for="risk5">
+                            <strong>Benign (<1%)</strong> :
+                            Purely cystic nodules (no solid component).
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <!--
+            ###################
+            Step 2
+            ###################
+            -->
+            <div id="step2" class="hide">
+                <h5 class="light">Please enter US-FNA result :</h5>
+
+                <ul>
+                    <li> Non diagnostic</li>
+                    <li> Benign</li>
+                    <li> AUS</li>
+                    <li> Suspicious for Follicular Neoplasm</li>
+                    <li> Suspicious for Malignancy</li>
+                    <li> Malignant</li>
+                </ul>
+            </div>
+
+            <!--
+            ###################
+            Step 2
+            ###################
+            -->
+            <div id="step3">
+                <h4>Risk of Malignancy</h4>
+
+                <p class="light">In 100 nodules with this features and FNA result</p>
+
+                <div class="center-align">
+                    <div id="diagram">
+                    </div>
+
+                    <h5 class="light">67 % ( 40 – 70 )</h5>
+                </div>
+
+
+            </div>
+
+
         </div>
+
+
         <div class="col s2 center-align">
-            <a class="waves-effect waves-light btn btn-large btn-floating"><i class="mdi-navigation-arrow-forward"></i></a>
+            <a class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
+                    class="mdi-navigation-arrow-forward"></i></a>
         </div>
+
     </div>
 </div>
 
@@ -92,6 +167,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
 
 <script type="text/javascript" src="js/calculator.js"></script>
+
+<script>
+    $( function () {
+        var estimate = 67;
+        var $diagram = $( '#diagram' );
+
+        $diagram.empty();
+
+        var currentCount = 0;
+        var color = '';
+
+        for ( var row = 0; row < 10; ++row ) {
+            var $row = $( '<div class="row">' );
+
+            $row.append( '<div class="col s1">&nbsp;</div>' );
+
+            for ( var col = 0; col < 10; ++col ) {
+                color = currentCount++ < estimate ? "teal" : "orange";
+                $row.append( '<div class="col s1"><i class="btn-floating disabled ' + color + '"></i></div>' );
+            }
+
+            $row.append( '<div class="col s1">&nbsp;</div>' );
+
+            $diagram.append( $row );
+        }
+
+    } );
+</script>
 
 <!--<script>-->
 <!--console.log( JSON.stringify( calculator.computeAll( 0.05 ), null, 4 ) );-->
