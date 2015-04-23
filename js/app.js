@@ -156,25 +156,19 @@ var app = function () {
             } );
     };
 
-    function setupScreen2() {
-    }
+    var setupScreen2 = function () {
+    };
 
-    function setupScreen3() {
+    var setupScreen3 = function () {
+        var currentCount = 0;
+        var color = '';
+
         // TODO change this
         var estimate = 43;
         //var scores = calculator.computeAll( userRiskPercentage );
-        //
-        //console.log( scores );
-        //
-        //renderOutput( estimate );
-    }
 
-    // render the diagram and computed score
-    var renderOutput = function ( estimate ) {
+        // display diagram
         $computedDiagram.empty();
-
-        var currentCount = 0;
-        var color = '';
 
         for ( var row = 0; row < 10; ++row ) {
             var $row = $( '<div class="row">' );
@@ -183,7 +177,9 @@ var app = function () {
 
             for ( var col = 0; col < 10; ++col ) {
                 color = currentCount++ < estimate ? "teal" : "orange";
-                $row.append( '<div class="col s1"><i class="btn-floating disabled ' + color + '"></i></div>' );
+                $row.append( '<div class="col s1"><i class="btn-small-circle btn-floating disabled ' +
+                             color +
+                             '"></i></div>' );
             }
 
             $row.append( '<div class="col s1">&nbsp;</div>' );
@@ -191,6 +187,7 @@ var app = function () {
             $computedDiagram.append( $row );
         }
 
+        // display computed score
         // TODO fix this!
         $computedValue.text( estimate + ' % ( 40 – 70 )' );
     };
@@ -207,13 +204,16 @@ var app = function () {
                 var errorMessage = null;
 
                 if ( currentScreen === 1 ) {
-                    if ( !userRiskPercentage ) {
+                    if ( userRiskPercentage ) {
+                        setupScreen2();
+                    }
+                    else {
                         errorMessage = 'Please specify a value for risk probability first.'
                     }
                 }
                 // TODO check input from screen 2 first
                 else if ( currentScreen === 2 ) {
-
+                    setupScreen3();
                 }
 
                 if ( errorMessage ) {
@@ -232,9 +232,6 @@ var app = function () {
             } );
 
             setupScreen1();
-            setupScreen2();
-            setupScreen3();
-
             displayScreen();
         }
     }

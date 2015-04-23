@@ -11,12 +11,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
 
     <link rel="stylesheet" href="vendor/materialize/0.96.1/css/materialize.min.css">
-
-    <style>
-        .full-height {
-            height: 85vh;
-        }
-    </style>
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="grey lighten-4">
 
@@ -158,20 +153,22 @@
             ###################
             -->
             <div class="user-screen user-screen-3 hide">
-                <h4>Risk of Malignancy</h4>
+                <div class="card-panel">
+                    <h5 class="light">Risk of Malignancy</h5>
 
-                <p class="light">In 100 nodules with this features and FNA result</p>
+                    <p class="light">In 100 nodules with this features and FNA result</p>
 
-                <div class="center-align">
-                    <div id="computed-diagram"></div>
+                    <div class="row">
+                        <div class="col s10 offset-s1 center-align">
+                            <div id="computed-diagram"></div>
 
-                    <h5 id="computed-value" class="light"></h5>
+                            <h5 id="computed-value" class="light"></h5>
+                        </div>
+                    </div>
+
+
                 </div>
-
-
             </div>
-
-
         </div>
 
 

@@ -1,0 +1,9 @@
+.full-height {
+    height: 85vh;
+}
+
+.btn-small-circle {
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+}
