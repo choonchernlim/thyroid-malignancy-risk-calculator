@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
     <title>Thyroid Malignancy Risk Calculator</title>
 
@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="vendor/materialize/0.96.1/css/materialize.min.css">
     <link rel="stylesheet" href="css/app.css">
+
+    <script type="text/javascript" src="vendor/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body class="grey lighten-4">
 
@@ -30,7 +32,7 @@
     <div class="row">
 
         <div class="col s2">
-            <div class="full-height valign-wrapper right">
+            <div class="app-full-height valign-wrapper right">
                 <a id="prevBtn" class=" valign waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
                         class="mdi-navigation-arrow-back"></i></a>
             </div>
@@ -41,14 +43,16 @@
             <br/>
 
             <div class="row center-align">
-                <div class="col s2 offset-s3">
-                    <i class="user-progress user-progress-1 mdi-image-lens grey-text text-lighten-1"></i>
-                </div>
-                <div class="col s2">
-                    <i class="user-progress user-progress-2 mdi-image-lens grey-text text-lighten-1"></i>
-                </div>
-                <div class="col s2">
-                    <i class="user-progress user-progress-3 mdi-image-lens grey-text text-lighten-1"></i>
+                <div class="col s4 offset-s4">
+                    <div class="col s4">
+                        <i class="user-progress user-progress-1 mdi-image-lens grey-text text-lighten-1"></i>
+                    </div>
+                    <div class="col s4">
+                        <i class="user-progress user-progress-2 mdi-image-lens grey-text text-lighten-1"></i>
+                    </div>
+                    <div class="col s4">
+                        <i class="user-progress user-progress-3 mdi-image-lens grey-text text-lighten-1"></i>
+                    </div>
                 </div>
             </div>
 
@@ -58,7 +62,7 @@
             ###################
             -->
             <div class="user-screen user-screen-1 hide">
-                <form id="form">
+                <form class="form">
                     <div class="card-panel">
                         <h5 class="light">Enter probability of this nodule's thyroid malignancy :</h5>
 
@@ -133,18 +137,42 @@
             ###################
             -->
             <div class="user-screen user-screen-2 hide">
-                <div class="card-panel">
-                    <h5 class="light">Please enter US-FNA result :</h5>
+                <form class="form">
+                    <div class="card-panel">
+                        <h5 class="light">Please enter US-FNA result :</h5>
 
-                    <ul>
-                        <li>Non diagnostic</li>
-                        <li>Benign</li>
-                        <li>AUS</li>
-                        <li>Suspicious for Follicular Neoplasm</li>
-                        <li>Suspicious for Malignancy</li>
-                        <li>Malignant</li>
-                    </ul>
-                </div>
+                        <ul class="collection">
+                            <li class="collection-item">
+                                <input id="usfna1" type="radio" name="us-fna-radio" value="nonDiagnostic"
+                                       class="with-gap"/>
+                                <label for="usfna1"><strong>Non diagnostic</strong></label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="usfna2" type="radio" name="us-fna-radio" value="benign" class="with-gap"/>
+                                <label for="usfna2"><strong>Benign</strong></label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="usfna3" type="radio" name="us-fna-radio" value="aus" class="with-gap"/>
+                                <label for="usfna3"><strong>AUS</strong></label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="usfna4" type="radio" name="us-fna-radio"
+                                       value="suspiciousForFollicularNeoplasm"
+                                       class="with-gap"/>
+                                <label for="usfna4"><strong>Suspicious for Follicular Neoplasm</strong></label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="usfna5" type="radio" name="us-fna-radio" value="suspiciousForMalignancy"
+                                       class="with-gap"/>
+                                <label for="usfna5"><strong>Suspicious for Malignancy</strong></label>
+                            </li>
+                            <li class="collection-item">
+                                <input id="usfna6" type="radio" name="us-fna-radio" value="malignant" class="with-gap"/>
+                                <label for="usfna6"><strong>Malignant</strong></label>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
             </div>
 
             <!--
@@ -158,8 +186,20 @@
 
                     <p class="light">In 100 nodules with this features and FNA result</p>
 
+                    <div class="row app-top-bottom-border">
+                        <div class="col s6 valign-wrapper">
+                            <i class="valign small mdi-social-person red-text"></i> <span
+                                id="malignancy-count-text"></span>
+                        </div>
+                        <div class="col s6 valign-wrapper">
+                            <i class="valign small mdi-social-person teal-text"></i> <span
+                                id="non-malignancy-count-text"></span>
+                        </div>
+                    </div>
+
+
                     <div class="row">
-                        <div class="col s10 offset-s1 center-align">
+                        <div class="col s12 center-align">
                             <div id="computed-diagram"></div>
 
                             <h5 id="computed-value" class="light"></h5>
@@ -173,7 +213,7 @@
 
 
         <div class="col s2">
-            <div class="full-height valign-wrapper left">
+            <div class="app-full-height valign-wrapper left">
                 <a id="nextBtn" class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
                         class="mdi-navigation-arrow-forward"></i></a>
             </div>

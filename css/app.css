@@ -1,9 +1,8 @@
-.full-height {
+.app-full-height {
     height: 85vh;
 }
 
-.btn-small-circle {
-    height: 20px;
-    line-height: 20px;
-    width: 20px;
+.app-top-bottom-border {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
 }
