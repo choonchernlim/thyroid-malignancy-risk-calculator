@@ -204,11 +204,22 @@ var app = function () {
             } );
 
             $nextBtn.click( function () {
-                // TODO may have to throw toast on user error!
-                // make sure the input is correct before displaying next screen
-                if ( (currentScreen === 1 && userRiskPercentage != null) ||
-                     // TODO check input from screen 2 first
-                     (currentScreen == 2) ) {
+                var errorMessage = null;
+
+                if ( currentScreen === 1 ) {
+                    if ( !userRiskPercentage ) {
+                        errorMessage = 'Please specify a value for risk probability first.'
+                    }
+                }
+                // TODO check input from screen 2 first
+                else if ( currentScreen === 2 ) {
+
+                }
+
+                if ( errorMessage ) {
+                    Materialize.toast( errorMessage, 3000 );
+                }
+                else {
                     currentScreen++;
                     displayScreen();
                 }
