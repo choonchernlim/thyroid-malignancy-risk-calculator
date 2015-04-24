@@ -21,7 +21,12 @@
     <nav class="blue-grey lighten-1">
         <div class="container nav-wrapper">
             <a href="index.html" class="brand-logo">Thyroid Malignancy Risk Calculator</a>
+            <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <ul id="mobile-nav" class="side-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
@@ -30,33 +35,40 @@
 </div>
 
 <div class="container">
+    <br/>
 
-    <div class="row">
-
-        <div class="col s2">
-            <div class="app-full-height valign-wrapper right">
-                <a id="prevBtn" class=" valign waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
-                        class="mdi-navigation-arrow-back"></i></a>
+    <div class="row valign-wrapper">
+        <div class="col s3">
+            <div>
+                <a id="prevBtn" class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
+                        class="mdi-navigation-arrow-back"></i></a><br/>
             </div>
         </div>
 
+        <div class="col s2 right-align">
+            <i class="user-progress user-progress-1 mdi-image-lens grey-text text-lighten-1"></i>
+        </div>
 
-        <div class="col s8">
-            <br/>
+        <div class="col s2 center-align">
+            <i class="user-progress user-progress-2 mdi-image-lens grey-text text-lighten-1"></i>
+        </div>
 
-            <div class="row center-align">
-                <div class="col s4 offset-s4">
-                    <div class="col s4">
-                        <i class="user-progress user-progress-1 mdi-image-lens grey-text text-lighten-1"></i>
-                    </div>
-                    <div class="col s4">
-                        <i class="user-progress user-progress-2 mdi-image-lens grey-text text-lighten-1"></i>
-                    </div>
-                    <div class="col s4">
-                        <i class="user-progress user-progress-3 mdi-image-lens grey-text text-lighten-1"></i>
-                    </div>
-                </div>
+        <div class="col s2">
+            <i class="user-progress user-progress-3 mdi-image-lens grey-text text-lighten-1"></i>
+        </div>
+
+        <div class="col s3">
+            <div class="right-align">
+                <a id="nextBtn" class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
+                        class="mdi-navigation-arrow-forward"></i></a><br/>
             </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col s12">
 
             <!--
             ###################
@@ -66,16 +78,14 @@
             <div class="user-screen user-screen-1 hide">
                 <form class="form">
                     <div class="card-panel">
-                        <h5 class="light">Enter probability of this nodule's thyroid malignancy :</h5>
+                        <p class="light">Enter probability of this nodule's thyroid malignancy :</p>
 
                         <div class="row">
-                            <div class="input-field col s1 offset-s2">
+                            <div class="input-field col s2 m1 l1 offset-m1 offset-l1">
                                 <input id="user-risk-text" type="text">
                             </div>
-                            <div class="input-field col s8">
-                                <label>%
-                                    <small>( Value between 1 to 100 )</small>
-                                </label>
+                            <div class="input-field col s10">
+                                <label for="user-risk-text">% ( Value between 1 to 100 )</label>
                             </div>
                         </div>
                     </div>
@@ -88,51 +98,42 @@
                         <ul class="collection">
                             <li class="collection-item">
                                 <input id="risk1" type="radio" name="user-risk-radio" value="0.8" class="with-gap"/>
-                                <label for="risk1">
-                                    <strong>High suspicion (>70-90%)</strong>
-                                    <span class="hide-on-med-and-down">: Solid hypoechoic nodule or solid hypoechoic
-                                        component (if partially cystic) with 1 or more features: irregular margins
-                                        (infiltrative, microlobulated), microcalcifications, taller than wide shape,
-                                        rim calcifications (small extrusive soft tissue component), extrathyroidal extension.
-                                    </span>
-                                </label>
+                                <label for="risk1" class="black-text">High suspicion (>70-90%)</label>
+                                <em class="hide-on-med-and-down grey-text">: Solid hypoechoic nodule or solid hypoechoic
+                                    component (if partially cystic) with 1 or more features: irregular margins
+                                    (infiltrative, microlobulated), microcalcifications, taller than wide shape,
+                                    rim calcifications (small extrusive soft tissue component), extrathyroidal
+                                    extension.
+                                </em>
                             </li>
                             <li class="collection-item">
                                 <input id="risk2" type="radio" name="user-risk-radio" value="0.15" class="with-gap"/>
-                                <label for="risk2">
-                                    <strong>Intermediate suspicion (10-20%)</strong>
-                                    <span class="hide-on-med-and-down">: Hypoechoic solid nodule with smooth margins
-                                        without microcalcifications, extrathyroidal extension, or taller than wide shape.
-                                    </span>
-                                </label>
+                                <label for="risk2" class="black-text">Intermediate suspicion (10-20%)</label>
+                                <em class="hide-on-med-and-down grey-text">: Hypoechoic solid nodule with smooth margins
+                                    without microcalcifications, extrathyroidal extension, or taller than wide shape.
+                                </em>
                             </li>
                             <li class="collection-item">
                                 <input id="risk3" type="radio" name="user-risk-radio" value="0.075" class="with-gap"/>
-                                <label for="risk3">
-                                    <strong>Low suspicion (5-10%)</strong>
-                                    <span class="hide-on-med-and-down">: Isoechoic or hyperechoic solid nodule, or
-                                        partially cystic nodule with eccentric solid areas, without microcalcification,
-                                        irregular margin or extrathyroidal extension, or taller than wide shape.
-                                    </span>
-                                </label>
+                                <label for="risk3" class="black-text">Low suspicion (5-10%)</label>
+                                <em class="hide-on-med-and-down grey-text">: Isoechoic or hyperechoic solid nodule, or
+                                    partially cystic nodule with eccentric solid areas, without microcalcification,
+                                    irregular margin or extrathyroidal extension, or taller than wide shape.
+                                </em>
                             </li>
                             <li class="collection-item">
                                 <input id="risk4" type="radio" name="user-risk-radio" value="0.03" class="with-gap"/>
-                                <label for="risk4">
-                                    <strong>Very low suspicion (<3%)</strong>
-                                    <span class="hide-on-med-and-down">: Spongiform or partially cystic nodules
-                                        without any of the sonographic features described in low, intermediate or
-                                        high suspicion patterns.
-                                    </span>
-                                </label>
+                                <label for="risk4" class="black-text">Very low suspicion (<3%)</label>
+                                <em class="hide-on-med-and-down grey-text">: Spongiform or partially cystic nodules
+                                    without any of the sonographic features described in low, intermediate or
+                                    high suspicion patterns.
+                                </em>
                             </li>
                             <li class="collection-item">
                                 <input id="risk5" type="radio" name="user-risk-radio" value="0.01" class="with-gap"/>
-                                <label for="risk5">
-                                    <strong>Benign (<1%)</strong>
-                                    <span class="hide-on-med-and-down">: Purely cystic nodules (no solid component).
-                                    </span>
-                                </label>
+                                <label for="risk5" class="black-text">Benign (<1%)</label>
+                                <em class="hide-on-med-and-down grey-text">: Purely cystic nodules (no solid component).
+                                </em>
                             </li>
                         </ul>
                     </div>
@@ -153,30 +154,30 @@
                             <li class="collection-item">
                                 <input id="usfna1" type="radio" name="us-fna-radio" value="nonDiagnostic"
                                        class="with-gap"/>
-                                <label for="usfna1"><strong>Non diagnostic</strong></label>
+                                <label for="usfna1" class="black-text">Non diagnostic</label>
                             </li>
                             <li class="collection-item">
                                 <input id="usfna2" type="radio" name="us-fna-radio" value="benign" class="with-gap"/>
-                                <label for="usfna2"><strong>Benign</strong></label>
+                                <label for="usfna2" class="black-text">Benign</label>
                             </li>
                             <li class="collection-item">
                                 <input id="usfna3" type="radio" name="us-fna-radio" value="aus" class="with-gap"/>
-                                <label for="usfna3"><strong>Atypia of Undetermined Significance (AUS)</strong></label>
+                                <label for="usfna3" class="black-text">Atypia of Undetermined Significance (AUS)</label>
                             </li>
                             <li class="collection-item">
                                 <input id="usfna4" type="radio" name="us-fna-radio"
                                        value="suspiciousForFollicularNeoplasm"
                                        class="with-gap"/>
-                                <label for="usfna4"><strong>Suspicious for Follicular Neoplasm</strong></label>
+                                <label for="usfna4" class="black-text">Suspicious for Follicular Neoplasm</label>
                             </li>
                             <li class="collection-item">
                                 <input id="usfna5" type="radio" name="us-fna-radio" value="suspiciousForMalignancy"
                                        class="with-gap"/>
-                                <label for="usfna5"><strong>Suspicious for Malignancy</strong></label>
+                                <label for="usfna5" class="black-text">Suspicious for Malignancy</label>
                             </li>
                             <li class="collection-item">
                                 <input id="usfna6" type="radio" name="us-fna-radio" value="malignant" class="with-gap"/>
-                                <label for="usfna6"><strong>Malignant</strong></label>
+                                <label for="usfna6" class="black-text">Malignant</label>
                             </li>
                         </ul>
                     </div>
@@ -194,23 +195,23 @@
 
                     <p class="light">In 100 nodules with this features and FNA result</p>
 
-                    <div class="row app-top-bottom-border">
-                        <div class="col s12 l6 valign-wrapper">
-                            <i class="valign small mdi-social-person red-text"></i> <span
-                                id="malignancy-count-text"></span>
-                        </div>
-                        <div class="col s12 l6 valign-wrapper">
-                            <i class="valign small mdi-social-person teal-text"></i> <span
-                                id="non-malignancy-count-text"></span>
-                        </div>
-                    </div>
-
-
                     <div class="row">
-                        <div class="col s12 center-align">
+                        <div class="col s12 m6 l6 center-align">
                             <div id="computed-diagram"></div>
 
                             <h5 id="computed-value" class="light"></h5>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <p class="divider hide-on-med-and-up"></p>
+
+                            <div class="valign-wrapper">
+                                <i class="valign small mdi-social-person red-text"></i> <span
+                                    id="malignancy-count-text"></span>
+                            </div>
+                            <div class="valign-wrapper">
+                                <i class="valign small mdi-social-person teal-text"></i> <span
+                                    id="non-malignancy-count-text"></span>
+                            </div>
                         </div>
                     </div>
 
@@ -220,13 +221,6 @@
         </div>
 
 
-        <div class="col s2">
-            <div class="app-full-height valign-wrapper left">
-                <a id="nextBtn" class="waves-effect waves-light btn btn-large btn-floating blue-grey lighten-1"><i
-                        class="mdi-navigation-arrow-forward"></i></a>
-            </div>
-        </div>
-
     </div>
 </div>
 
@@ -234,6 +228,7 @@
 <script type="text/javascript" src="vendor/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="vendor/materialize/0.96.1/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/app.min.js"></script>
+<script>app.startCalculator();</script>
 
 </body>
 </html>

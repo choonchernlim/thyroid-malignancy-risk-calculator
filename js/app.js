@@ -169,14 +169,18 @@ var app = function () {
         $computedDiagram.empty();
 
         for ( var row = 0; row < 10; ++row ) {
-            var $row = $( '<span style="line-height: 1">' );
+            var $row = $( '<div class="row center-align"  style="padding:0; margin: 0">' );
+
+            $row.append( '<div class="col s1" style="padding:0; margin: 0;">&nbsp;</div>' );
 
             for ( var col = 0; col < 10; ++col ) {
                 color = currentCount++ < malignancyCount ? "red-text" : "teal-text";
-                $row.append( '<i class="small mdi-social-person ' + color + '"></i>' );
+                $row.append( '<div class="col s1"  style="padding: 0; margin: 0;">' +
+                             '<i class="flow-text mdi-social-person ' + color + '"></i>' +
+                             '</div>' );
             }
 
-            $row.append( '<br/>' );
+            $row.append( '<div class="col s1" style="padding:0; margin: 0;">&nbsp;</div>' );
 
             $computedDiagram.append( $row );
         }
@@ -192,7 +196,7 @@ var app = function () {
 
     return {
         // on start, initialize previous/next buttons and display the first screen
-        start : function () {
+        startCalculator : function () {
             $prevBtn.click( function () {
                 currentScreen--;
                 displayScreen();
@@ -206,7 +210,7 @@ var app = function () {
                         setupScreen2();
                     }
                     else {
-                        errorMessage = 'Please specify a value for risk probability first.'
+                        errorMessage = 'Please specify a valid value first.'
                     }
                 }
                 else if ( currentScreen === 2 ) {
@@ -236,10 +240,15 @@ var app = function () {
             // setup and show first screen
             setupScreen1();
             displayScreen();
+
+        },
+
+        globalSetup : function () {
+            // for mobile menu hamburger to work
+            $( ".button-collapse" ).sideNav();
         }
     }
 }();
 
-// start the app!
-app.start();
+app.globalSetup();
 
