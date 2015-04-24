@@ -223,7 +223,7 @@ var app = function () {
                 }
 
                 if ( errorMessage ) {
-                    Materialize.toast( errorMessage, 3000 );
+                    Materialize.toast( errorMessage, 2000 );
                 }
                 else {
                     currentScreen++;
