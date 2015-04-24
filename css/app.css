@@ -1,26 +1,26 @@
-.app-full-height {
-    height: 85vh;
-}
+/*.app-full-height {*/
+    /*height: 85vh;*/
+/*}*/
 
-.app-top-bottom-border {
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
+/*.app-top-bottom-border {*/
+    /*border-top: 1px solid #e0e0e0;*/
+    /*border-bottom: 1px solid #e0e0e0;*/
+/*}*/
 
-.brand-logo {
-    font-size: 1.4em !important;
-}
+/*.brand-logo {*/
+    /*font-size: 1.4em !important;*/
+/*}*/
 
-@media only screen and (min-width: 993px) {
-    .brand-logo {
-        font-size: 1.6em !important;
-    }
-}
+/*@media only screen and (min-width: 993px) {*/
+    /*.brand-logo {*/
+        /*font-size: 1.6em !important;*/
+    /*}*/
+/*}*/
 
-@media only screen and (max-width: 600px) {
-    .brand-logo {
-        font-size: 1.3em !important;
-        line-height: 1.3em;
-        padding-top: 0.3em !important;
-    }
-}
+/*@media only screen and (max-width: 600px) {*/
+    /*.brand-logo {*/
+        /*font-size: 1.3em !important;*/
+        /*line-height: 1.3em;*/
+        /*padding-top: 0.3em !important;*/
+    /*}*/
+/*}*/
