@@ -13,6 +13,8 @@ var calculator = function () {
     var $calculatorResult = $( '#calculator-result' );
     var $computedDiagram = $( '#computed-diagram' );
     var $computedValue = $( '#computed-value' );
+    var $riskInfo = $( '.risk-info' );
+    var $riskDescription = $( '.risk-description' );
 
     var malignancyCountText = $( '#malignancy-count-text' );
     var nonMalignancyCountText = $( '#non-malignancy-count-text' );
@@ -79,13 +81,6 @@ var calculator = function () {
     }();
 
     var displayFormFields = function () {
-
-        // reset all values and form fields
-        userRiskPercentage = null;
-        usFnaString = null;
-
-        $form.trigger( 'reset' );
-
         // when user hits the refresh button on browser, remove all form fields to prevent confusion,
         // otherwise displayed/selected form fields don't reflect the value stored in JS
         $( window ).bind( 'beforeunload', function () {
@@ -142,7 +137,7 @@ var calculator = function () {
 
             if ( userRiskPercentage == null ) {
                 isValid = false;
-                displayError( 'Probability of nodule\'s thyroid malignancy required.' );
+                displayError( 'Valid probability of nodule\'s thyroid malignancy required.' );
             }
             if ( usFnaString == null ) {
                 isValid = false;
@@ -152,6 +147,13 @@ var calculator = function () {
             if ( isValid ) {
                 displayResult();
             }
+        } );
+
+        // when info icon is clicked, hide the icon and show the description
+        $riskInfo.click( function () {
+            var $this = $( this );
+            $this.addClass( 'hide' );
+            $this.parent().find( '.risk-description' ).removeClass( 'hide' );
         } );
 
         $calculatorResult.addClass( 'hide' );
@@ -203,7 +205,7 @@ var calculator = function () {
         $computedValue.text( malignancyCount + ' % ( ' + lower + ' – ' + higher + ' )' );
 
         $startOverBtn.click( function () {
-            displayFormFields();
+            window.location = '/dxtools/thyroid-nodules/';
         } );
 
         $calculatorInput.addClass( 'hide' );
