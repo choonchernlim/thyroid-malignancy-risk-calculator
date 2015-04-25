@@ -7,7 +7,7 @@
 
     <div class="row s12">
         <div class="section">
-            <h5>About the tool</h5>
+            <h5><i class="mdi-av-web"></i> About the tool</h5>
 
             <p>This tool was developed following a Bayesian approach for calculation of post-test probabilities based on
                 pre-test probabilities and likelihood ratios. (REF)
@@ -24,15 +24,15 @@
         </div>
 
         <div class="section">
-            <h5>About the team</h5>
+            <h5><i class="mdi-social-group"></i> About the team</h5>
 
             <p>This tool was developed by a team of researchers working at the Knowledge and Evaluation Research Unit.
             </p>
-            <p><strong>TBD: </strong>“Mike to Put his name here as the coder/developer”</p>
+            <p class="yellow"><strong>TBD: </strong>“Mike to Put his name here as the coder/developer”</p>
         </div>
 
         <div class="section">
-            <h5>Funding</h5>
+            <h5><i class="mdi-action-account-balance-wallet"></i> Funding</h5>
 
             <p>This project was supported by Grant Number UL1 TR000135 from the National Center for Advancing
                 Translational
@@ -43,7 +43,7 @@
         </div>
 
         <div class="section">
-            <h5>Contact Us</h5>
+            <h5><i class="mdi-maps-local-post-office"></i> Contact Us</h5>
 
             <p>In case of questions you can contact : <a href="mailto:kerunit@mayo.edu">kerunit@mayo.edu</a>.</p>
         </div>
