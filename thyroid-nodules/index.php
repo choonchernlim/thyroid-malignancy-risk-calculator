@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-    <title>KER Unit</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/logo.jpg"/>
-
-    <link rel="stylesheet" href="/assets/vendor/materialize/0.96.1/css/materialize.min.css">
-    <link rel="stylesheet" href="/assets/css/app.css">
-
-    <script type="text/javascript" src="/assets/vendor/modernizr/2.8.3/modernizr.min.js"></script>
-</head>
-<body class="grey lighten-4">
-
-<div class="navbar-fixed">
-    <nav class="black">
-        <div class="container nav-wrapper">
-            <img src="/assets/img/logo.jpg" class="hide-on-med-and-down" style="margin-right: 20px;"/>
-            <a href="/thyroid-nodules/" class="brand-logo">KER Unit</a>
-            <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/thyroid-nodules/">Home</a></li>
-                <li><a href="/about/">About Us</a></li>
-            </ul>
-            <ul id="mobile-nav" class="side-nav">
-                <li><a href="/thyroid-nodules/">Home</a></li>
-                <li><a href="/about/">About Us</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<?php require('../_includes/header.php'); ?>
 
 <div class="container">
     <div class="row">
@@ -251,11 +216,8 @@
     </div>
 </div>
 
+<?php require('../_includes/javascripts.php'); ?>
+<script type="text/javascript" src="/_assets/js/calculator.min.js"></script>
 
-<script type="text/javascript" src="/assets/vendor/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/vendor/materialize/0.96.1/js/materialize.min.js"></script>
-<script type="text/javascript" src="/assets/js/app.min.js"></script>
-<script type="text/javascript" src="/assets/js/calculator.min.js"></script>
+<?php require('../_includes/footer.php'); ?>
 
-</body>
-</html>

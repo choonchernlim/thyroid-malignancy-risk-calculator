@@ -204,7 +204,7 @@ var calculator = function () {
         $computedValue.text( malignancyCount + ' % ( ' + lower + ' – ' + higher + ' )' );
 
         $startOverBtn.click( function () {
-            window.location = '/thyroid-nodules/';
+            window.location = '/thyroid-nodules';
         } );
 
         $calculatorInput.addClass( 'hide' );
