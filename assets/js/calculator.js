@@ -14,7 +14,6 @@ var calculator = function () {
     var $computedDiagram = $( '#computed-diagram' );
     var $computedValue = $( '#computed-value' );
     var $riskInfo = $( '.risk-info' );
-    var $riskDescription = $( '.risk-description' );
 
     var malignancyCountText = $( '#malignancy-count-text' );
     var nonMalignancyCountText = $( '#non-malignancy-count-text' );
@@ -205,7 +204,7 @@ var calculator = function () {
         $computedValue.text( malignancyCount + ' % ( ' + lower + ' – ' + higher + ' )' );
 
         $startOverBtn.click( function () {
-            window.location = '/dxtools/thyroid-nodules/';
+            window.location = '/thyroid-nodules/';
         } );
 
         $calculatorInput.addClass( 'hide' );
