@@ -140,7 +140,7 @@
                     <li class="collection-item">
                         <input id="usfna1" type="radio" name="us-fna-radio" value="nonDiagnostic"
                                class="with-gap"/>
-                        <label for="usfna1" class="black-text">Non diagnostic</label>
+                        <label for="usfna1" class="black-text">Non Diagnostic</label>
                     </li>
                     <li class="collection-item">
                         <input id="usfna2" type="radio" name="us-fna-radio" value="benign" class="with-gap"/>
@@ -183,7 +183,9 @@
         <div class="card-panel">
             <h5>Risk of Malignancy</h5>
 
-            <p>In 100 nodules with this features and FNA result</p>
+            <p>In 100 nodules with these features: <span id="result-probability"></span>% risk probability and <span
+                    id="result-us-fna"></span>
+            </p>
 
             <div class="row">
                 <div class="col s12 m6 l6 center-align">
@@ -202,16 +204,6 @@
                         <i class="valign small mdi-social-person teal-text"></i>
                         <span id="non-malignancy-count-text"></span>
                     </div>
-
-                    <p class="divider"></p>
-
-                    <p><strong>Probability</strong> : <span id="result-probability"></span> %
-                    </p>
-
-                    <p><strong>US-FNA Result</strong> : <span id="result-us-fna"></span>
-                    </p>
-
-
                 </div>
             </div>
 

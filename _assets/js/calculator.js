@@ -199,7 +199,7 @@ var calculator = function () {
             $computedDiagram.append( $row );
         }
 
-        resultProbability.text( userRiskPercentage );
+        resultProbability.text( userRiskPercentage * 100 );
 
         resultUsFna.text( usFnaLabel );
 
