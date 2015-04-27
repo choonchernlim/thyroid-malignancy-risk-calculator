@@ -183,8 +183,8 @@
         <div class="card-panel">
             <h5>Risk of Malignancy</h5>
 
-            <p>In 100 nodules with these features: <span id="result-probability"></span>% risk probability and <span
-                    id="result-us-fna"></span>
+            <p>In 100 nodules with these features: <span id="result-probability"></span>% pretest probability and
+                <span id="result-us-fna"></span> US-FNA result
             </p>
 
             <div class="row">
