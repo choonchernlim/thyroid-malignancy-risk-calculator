@@ -17,9 +17,12 @@ var calculator = function () {
 
     var malignancyCountText = $( '#malignancy-count-text' );
     var nonMalignancyCountText = $( '#non-malignancy-count-text' );
+    var resultProbability = $( '#result-probability' );
+    var resultUsFna = $( '#result-us-fna' );
 
     var userRiskPercentage = null;
     var usFnaString = null;
+    var usFnaLabel = null;
 
     // formulas based on Naykky's Excel data
     var calculator = function () {
@@ -125,9 +128,10 @@ var calculator = function () {
                 $userRiskText.val( '' );
             } );
 
-        // record US FNA result
+        // record US FNA result, both value and text
         $usFnaRadio.change( function () {
             usFnaString = $( this ).val();
+            usFnaLabel = $( this ).parent().find( 'label' ).text();
         } );
 
         // when button is clicked, perform validation before showing the result
@@ -194,6 +198,10 @@ var calculator = function () {
 
             $computedDiagram.append( $row );
         }
+
+        resultProbability.text( userRiskPercentage );
+
+        resultUsFna.text( usFnaLabel );
 
         malignancyCountText.text( malignancyCount + ' patient' +
                                   (malignancyCount != 1 ? 's' : '') + ' with malignancy' );

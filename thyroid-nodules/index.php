@@ -13,7 +13,7 @@
             ###################
             -->
             <div class="col s12 m12 l6">
-                <h5 class="light"><strong>Step 1:</strong> Enter probability of nodule's thyroid malignancy</h5>
+                <h5 class="light"><strong>Step 1:</strong> Enter probability</h5>
 
                 <p>Based on your clinical assessment, enter the probability of thyroid malignancy
                     for this nodule :
@@ -46,10 +46,10 @@
                         <input id="risk1" type="radio" name="user-risk-radio" value="0.8" class="with-gap"/>
                         <label for="risk1" class="black-text">High suspicion (>70-90%)</label>
 
-                        <a href="#!" class="risk-info secondary-content hide-on-med-and-down"><i
+                        <a href="#!" class="risk-info secondary-content hide-on-small-and-down"><i
                                 class="mdi-action-info small blue-text"></i></a>
 
-                        <div class="risk-description row hide-on-med-and-down hide">
+                        <div class="risk-description row hide-on-small-and-down hide">
                             <br/>
 
                             <div class="grey-text col s10 offset-s1">
@@ -64,10 +64,10 @@
                         <input id="risk2" type="radio" name="user-risk-radio" value="0.15" class="with-gap"/>
                         <label for="risk2" class="black-text">Intermediate suspicion (10-20%)</label>
 
-                        <a href="#!" class="risk-info secondary-content hide-on-med-and-down"><i
+                        <a href="#!" class="risk-info secondary-content hide-on-small-and-down"><i
                                 class="mdi-action-info small blue-text"></i></a>
 
-                        <div class="risk-description row hide-on-med-and-down hide">
+                        <div class="risk-description row hide-on-small-and-down hide">
                             <br/>
 
                             <div class="grey-text col s10 offset-s1">
@@ -80,10 +80,10 @@
                         <input id="risk3" type="radio" name="user-risk-radio" value="0.075" class="with-gap"/>
                         <label for="risk3" class="black-text">Low suspicion (5-10%)</label>
 
-                        <a href="#!" class="risk-info secondary-content hide-on-med-and-down"><i
+                        <a href="#!" class="risk-info secondary-content hide-on-small-and-down"><i
                                 class="mdi-action-info small blue-text"></i></a>
 
-                        <div class="risk-description row hide-on-med-and-down hide">
+                        <div class="risk-description row hide-on-small-and-down hide">
                             <br/>
 
                             <div class="grey-text col s10 offset-s1">
@@ -97,10 +97,10 @@
                         <input id="risk4" type="radio" name="user-risk-radio" value="0.03" class="with-gap"/>
                         <label for="risk4" class="black-text">Very low suspicion (<3%)</label>
 
-                        <a href="#!" class="risk-info secondary-content hide-on-med-and-down"><i
+                        <a href="#!" class="risk-info secondary-content hide-on-small-and-down"><i
                                 class="mdi-action-info small blue-text"></i></a>
 
-                        <div class="risk-description row hide-on-med-and-down hide">
+                        <div class="risk-description row hide-on-small-and-down hide">
                             <br/>
 
                             <div class="grey-text col s10 offset-s1">
@@ -114,10 +114,10 @@
                         <input id="risk5" type="radio" name="user-risk-radio" value="0.01" class="with-gap"/>
                         <label for="risk5" class="black-text">Benign (<1%)</label>
 
-                        <a href="#!" class="risk-info secondary-content hide-on-med-and-down"><i
+                        <a href="#!" class="risk-info secondary-content hide-on-small-and-down"><i
                                 class="mdi-action-info small blue-text"></i></a>
 
-                        <div class="risk-description row hide-on-med-and-down hide">
+                        <div class="risk-description row hide-on-small-and-down hide">
                             <br/>
 
                             <div class="grey-text col s10 offset-s1">
@@ -202,6 +202,16 @@
                         <i class="valign small mdi-social-person teal-text"></i>
                         <span id="non-malignancy-count-text"></span>
                     </div>
+
+                    <p class="divider"></p>
+
+                    <p><strong>Probability</strong> : <span id="result-probability"></span> %
+                    </p>
+
+                    <p><strong>US-FNA Result</strong> : <span id="result-us-fna"></span>
+                    </p>
+
+
                 </div>
             </div>
 
