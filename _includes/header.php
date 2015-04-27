@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>KER Unit</title>
+    <title>Thyroid Malignancy Risk Calculator</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="shortcut icon" type="image/x-icon" href="/_assets/img/logo.jpg"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/_assets/img/favicon.ico"/>
 
     <link rel="stylesheet" href="/_assets/vendor/materialize/0.96.1/css/materialize.min.css">
     <link rel="stylesheet" href="/_assets/css/app.css">
@@ -20,8 +20,9 @@
 <div class="navbar-fixed">
     <nav class="black">
         <div class="container nav-wrapper">
-            <img src="/_assets/img/logo.jpg" class="hide-on-med-and-down" style="margin-right: 20px;"/>
-            <a href="/thyroid-nodules" class="brand-logo">KER Unit</a>
+            <a href="http://www.mayoclinic.org/"><img src="/_assets/img/logo.jpg" class="hide-on-med-and-down"
+                                                      style="margin-right: 10px;"/></a>
+            <a href="/thyroid-nodules" class="brand-logo">Thyroid Malignancy<br/>Risk Calculator</a>
             <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/thyroid-nodules">Home</a></li>
@@ -35,3 +36,4 @@
     </nav>
 </div>
 
+<br/>

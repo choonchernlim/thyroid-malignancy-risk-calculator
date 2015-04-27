@@ -1,0 +1,16 @@
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 75px;
+    line-height: 75px;
+}
+
+nav .nav-wrapper img {
+    margin-top: 5px;
+}
+
+nav .brand-logo {
+    width: 200px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    line-height: 28px;
+    text-align: center;
+}

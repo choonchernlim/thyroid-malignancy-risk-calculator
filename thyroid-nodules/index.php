@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row">
-        <h4>Thyroid Malignancy Risk Calculator</h4>
+        <!--        <h4>Thyroid Malignancy Risk Calculator</h4>-->
     </div>
 
     <div id="calculator-input" class="row">
@@ -166,10 +166,13 @@
                     </li>
                 </ul>
 
-                <button id="calculateBtn" class="btn btn-large waves-effect waves-light blue right" type="button">
-                    Calculate
-                    <i class="mdi-content-send right"></i>
-                </button>
+                <div class="center-align">
+                    <br/>
+                    <button id="calculateBtn" class="btn btn-large waves-effect waves-light blue" type="button">
+                        Calculate
+                        <i class="mdi-content-send right"></i>
+                    </button>
+                </div>
             </div>
         </form>
     </div>

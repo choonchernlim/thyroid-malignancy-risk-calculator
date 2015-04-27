@@ -140,7 +140,7 @@ var calculator = function () {
 
             if ( userRiskPercentage == null ) {
                 isValid = false;
-                displayError( 'Valid probability of nodule\'s thyroid malignancy required.' );
+                displayError( 'Valid probability required.' );
             }
             if ( usFnaString == null ) {
                 isValid = false;

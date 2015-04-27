@@ -6,47 +6,43 @@
     </div>
 
     <div class="row s12">
-        <div class="section">
-            <h5><i class="mdi-av-web"></i> About the tool</h5>
+        <h5><i class="mdi-av-web"></i> About the tool</h5>
 
-            <p>This tool was developed following a Bayesian approach for calculation of post-test probabilities based on
-                pre-test probabilities and likelihood ratios. (REF)
-            </p>
+        <p>This tool was developed following a Bayesian approach for calculation of post-test probabilities based on
+            pre-test probabilities and likelihood ratios. (REF)
+        </p>
 
-            <p>The user has the ability to enter a pre-test probability based on clinical experience or following the
-                American Thyroid Association ultrasound (US) risk stratification. (REF)
-            </p>
+        <p>The user has the ability to enter a pre-test probability based on clinical experience or following the
+            American Thyroid Association ultrasound (US) risk stratification. (REF)
+        </p>
 
-            <p>The likelihood ratio was generated from a systematic review regarding the diagnostic accuracy of US-fine
-                needle aspiration biopsy for the diagnosis of thyroid malignancy.
-                Currently under peer-review (abstract available upon request). (May/2015)
-            </p>
-        </div>
+        <p>The likelihood ratio was generated from a systematic review regarding the diagnostic accuracy of US-fine
+            needle aspiration biopsy for the diagnosis of thyroid malignancy.
+            Currently under peer-review (abstract available upon request). (May/2015)
+        </p>
 
-        <div class="section">
-            <h5><i class="mdi-social-group"></i> About the team</h5>
+        <br/>
+        <h5><i class="mdi-social-group"></i> About the team</h5>
 
-            <p>This tool was developed by a team of researchers working at the Knowledge and Evaluation Research Unit.
-            </p>
-            <p class="yellow"><strong>TBD: </strong>“Mike to Put his name here as the coder/developer”</p>
-        </div>
+        <p>This tool was developed by a team of researchers working at the Knowledge and Evaluation Research Unit.
+        </p>
 
-        <div class="section">
-            <h5><i class="mdi-action-account-balance-wallet"></i> Funding</h5>
+        <p class="yellow"><strong>TBD: </strong>“Mike to Put his name here as the coder/developer”</p>
 
-            <p>This project was supported by Grant Number UL1 TR000135 from the National Center for Advancing
-                Translational
-                Sciences (NCATS).
-                Its contents are solely the responsibility of the authors and do not necessarily represent the official
-                views of the NIH.
-            </p>
-        </div>
+        <br/>
+        <h5><i class="mdi-action-account-balance-wallet"></i> Funding</h5>
 
-        <div class="section">
-            <h5><i class="mdi-maps-local-post-office"></i> Contact Us</h5>
+        <p>This project was supported by Grant Number UL1 TR000135 from the National Center for Advancing
+            Translational
+            Sciences (NCATS).
+            Its contents are solely the responsibility of the authors and do not necessarily represent the official
+            views of the NIH.
+        </p>
 
-            <p>In case of questions you can contact : <a href="mailto:kerunit@mayo.edu">kerunit@mayo.edu</a>.</p>
-        </div>
+        <br/>
+        <h5><i class="mdi-maps-local-post-office"></i> Contact Us</h5>
+
+        <p>In case of questions you can contact : <a href="mailto:kerunit@mayo.edu">kerunit@mayo.edu</a>.</p>
     </div>
 </div>
 
