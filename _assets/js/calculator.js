@@ -1,6 +1,8 @@
 var calculator = function () {
     'use strict';
 
+    var calculatorLink = $( '.brand-logo' ).attr( 'href' );
+
     var $startOverBtn = $( '#startOverBtn' );
     var $calculateBtn = $( '#calculateBtn' );
 
@@ -212,7 +214,7 @@ var calculator = function () {
         $computedValue.text( malignancyCount + ' % ( ' + lower + ' – ' + higher + ' )' );
 
         $startOverBtn.click( function () {
-            window.location = '/thyroid-nodules';
+            window.location = calculatorLink;
         } );
 
         $calculatorInput.addClass( 'hide' );

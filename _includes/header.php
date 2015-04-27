@@ -22,14 +22,14 @@
         <div class="container nav-wrapper">
             <a href="http://www.mayoclinic.org/"><img src="/_assets/img/logo.jpg" class="hide-on-med-and-down"
                                                       style="margin-right: 10px;"/></a>
-            <a href="/thyroid-nodules" class="brand-logo">Thyroid Malignancy<br/>Risk Calculator</a>
+            <a href="/" class="brand-logo">Thyroid Malignancy<br/>Risk Calculator</a>
             <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="/thyroid-nodules">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li><a href="/thyroid-nodules">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
             </ul>
         </div>
