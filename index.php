@@ -14,8 +14,7 @@
             <div class="col s12 m12 l6">
                 <h5 class="light"><strong>Step 1:</strong> Assign a pre-test probability</h5>
 
-                <p>Based on your clinical assessment, enter the probability of thyroid malignancy
-                    for this nodule :
+                <p>Based on your clinical assessment :
                 </p>
 
                 <div class="card">
