@@ -177,8 +177,8 @@ var calculator = function () {
         var malignancyCount = Math.round( result.postTestProbabilityEstimate );
         var nonMalignancyCount = 100 - malignancyCount;
 
-        var lower = Math.round( result.postTestProbabilityLower );
-        var higher = Math.round( result.postTestProbabilityHigher );
+        //var lower = Math.round( result.postTestProbabilityLower );
+        //var higher = Math.round( result.postTestProbabilityHigher );
 
         // display diagram
         $computedDiagram.empty();
@@ -204,11 +204,9 @@ var calculator = function () {
 
         resultUsFna.text( usFnaLabel );
 
-        malignancyCountText.text( 'Up to ' + getPatientText( higher ) +
-                                  ' with thyroid cancer (or as few as ' + getPatientText( lower ) + ')' );
+        malignancyCountText.text( getPatientText( malignancyCount ) + ' with thyroid malignancy' );
 
-        nonMalignancyCountText.text( 'At least ' + getPatientText( 100 - higher ) +
-                                     ' without thyroid cancer (at most ' + getPatientText( 100 - lower ) + ')' );
+        nonMalignancyCountText.text( getPatientText( nonMalignancyCount ) + ' without thyroid malignancy' );
 
         $startOverBtn.click( function () {
             window.location = calculatorLink;
