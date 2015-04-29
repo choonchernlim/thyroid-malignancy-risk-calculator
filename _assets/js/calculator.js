@@ -14,7 +14,6 @@ var calculator = function () {
     var $calculatorInput = $( '#calculator-input' );
     var $calculatorResult = $( '#calculator-result' );
     var $computedDiagram = $( '#computed-diagram' );
-    var $computedValue = $( '#computed-value' );
     var $riskInfo = $( '.risk-info' );
 
     var malignancyCountText = $( '#malignancy-count-text' );
@@ -205,13 +204,11 @@ var calculator = function () {
 
         resultUsFna.text( usFnaLabel );
 
-        malignancyCountText.text( malignancyCount + ' patient' +
-                                  (malignancyCount != 1 ? 's' : '') + ' with malignancy' );
+        malignancyCountText.text( 'Up to ' + getPatientText( higher ) +
+                                  ' with thyroid cancer (or as few as ' + getPatientText( lower ) + ')' );
 
-        nonMalignancyCountText.text( nonMalignancyCount + ' patient' +
-                                     (nonMalignancyCount != 1 ? 's' : '') + ' without malignancy' );
-
-        $computedValue.text( malignancyCount + ' % ( ' + lower + ' – ' + higher + ' )' );
+        nonMalignancyCountText.text( 'At least ' + getPatientText( 100 - higher ) +
+                                     ' without thyroid cancer (at most ' + getPatientText( 100 - lower ) + ')' );
 
         $startOverBtn.click( function () {
             window.location = calculatorLink;
@@ -219,6 +216,10 @@ var calculator = function () {
 
         $calculatorInput.addClass( 'hide' );
         $calculatorResult.removeClass( 'hide' );
+    };
+
+    var getPatientText = function ( count ) {
+        return count == 1 ? count + ' patient' : count + ' patients';
     };
 
     return {

@@ -12,7 +12,7 @@
             ###################
             -->
             <div class="col s12 m12 l6">
-                <h5 class="light"><strong>Step 1:</strong> Enter probability</h5>
+                <h5 class="light"><strong>Step 1:</strong> Assign a pre-test probability</h5>
 
                 <p>Based on your clinical assessment, enter the probability of thyroid malignancy
                     for this nodule :
@@ -38,7 +38,7 @@
 
                 <div class="divider"></div>
 
-                <p>Otherwise, select an ATA US risk classification :</p>
+                <p>Based on the ATA ultrasound risk classification :</p>
 
                 <ul class="collection z-depth-1">
                     <li class="collection-item">
@@ -53,7 +53,7 @@
 
                             <div class="grey-text col s10 offset-s1">
                                 Solid hypoechoic nodule or component (if
-                                partially cystic) with ≥1 features: irregular margins (infiltrative,
+                                partially cystic) with one of the following features: irregular margins (infiltrative,
                                 microlobulated), microcalcifications, taller than wide shape, rim calcifications,
                                 extrathyroidal extension.
                             </div>
@@ -192,20 +192,19 @@
             <div class="row">
                 <div class="col s12 m6 l6 center-align">
                     <div id="computed-diagram"></div>
-
-                    <h5 id="computed-value" class="light"></h5>
                 </div>
                 <div class="col s12 m6 l6">
                     <p class="divider hide-on-med-and-up"></p>
 
-                    <div class="valign-wrapper">
+                    <p class="valign-wrapper">
                         <i class="valign small mdi-social-person red-text"></i>
                         <span id="malignancy-count-text"></span>
-                    </div>
-                    <div class="valign-wrapper">
-                        <i class="valign small mdi-social-person teal-text"></i>
+                    </p>
+
+                    <p class="valign-wrapper">
+                        <i class="valign1 small mdi-social-person teal-text"></i>
                         <span id="non-malignancy-count-text"></span>
-                    </div>
+                    </p>
                 </div>
             </div>
 
