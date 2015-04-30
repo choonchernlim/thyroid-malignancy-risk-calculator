@@ -38,7 +38,7 @@
         <p>This tool was developed by a team of researchers working at the Knowledge and Evaluation Research Unit.
         </p>
 
-        <p>Choon-Chern Lim (Mike), Technical Specialist at Mayo Clinic.
+        <p>Choon-Chern Lim (Mike), IT Technical Specialist at Mayo Clinic.
         </p>
 
         <br/>

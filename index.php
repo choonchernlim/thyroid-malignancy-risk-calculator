@@ -195,7 +195,7 @@
                 <div class="col s12 m6 l6">
                     <p class="divider hide-on-med-and-up"></p>
 
-                    <strong>Best Estimate of Thyroid Malignancy Risk</strong>
+                    <p id="result-text"></p>
 
                     <p class="valign-wrapper">
                         <i class="valign small mdi-social-person red-text"></i>

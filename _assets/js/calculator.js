@@ -18,6 +18,7 @@ var calculator = function () {
 
     var malignancyCountText = $( '#malignancy-count-text' );
     var nonMalignancyCountText = $( '#non-malignancy-count-text' );
+    var resultText = $( '#result-text' );
     var resultProbability = $( '#result-probability' );
     var resultUsFna = $( '#result-us-fna' );
 
@@ -177,8 +178,8 @@ var calculator = function () {
         var malignancyCount = Math.round( result.postTestProbabilityEstimate );
         var nonMalignancyCount = 100 - malignancyCount;
 
-        //var lower = Math.round( result.postTestProbabilityLower );
-        //var higher = Math.round( result.postTestProbabilityHigher );
+        var lower = Math.round( result.postTestProbabilityLower );
+        var higher = Math.round( result.postTestProbabilityHigher );
 
         // display diagram
         $computedDiagram.empty();
@@ -203,6 +204,9 @@ var calculator = function () {
         resultProbability.text( userRiskPercentage * 100 );
 
         resultUsFna.text( usFnaLabel );
+
+        resultText.text( 'Best estimate of thyroid malignancy risk is ' +
+                         malignancyCount + '% (range of ' + lower + ' to ' + higher + ')' );
 
         malignancyCountText.text( getPatientText( malignancyCount ) + ' with thyroid malignancy' );
 
